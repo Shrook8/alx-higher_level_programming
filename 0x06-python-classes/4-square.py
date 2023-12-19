@@ -15,7 +15,7 @@ class Square:
 
     @property
     def size(self):
-        """property for the length of a side of this square.
+        """Property for the length of a side of this square.
 
         Raises:
             TypeError: If size is not an integer.
