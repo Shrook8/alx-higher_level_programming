@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""Defines a class Rectangle."""
 
 
 class Rectangle:
-    """Represent a rectangle."""
+    """Represents a rectangle. No body."""
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
@@ -17,11 +17,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get/set the width of the Rectangle."""
+        """Return width of the rectangle """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -30,11 +31,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get/set the height of the Rectangle."""
+        """Return height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set height of the rectangle. """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -49,7 +51,7 @@ class Rectangle:
         """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+        return (2*(self.__width + self.__height))
 
     def __str__(self):
         """Return the printable representation of the Rectangle.
@@ -63,12 +65,11 @@ class Rectangle:
         for i in range(self.__height):
             [rect.append('#') for j in range(self.__width)]
             if i != self.__height - 1:
-                rect.append("\n")
+                rect.append('\n')
         return ("".join(rect))
 
     def __repr__(self):
-        """Return the string representation of the Rectangle."""
+        """Return a string representation of the rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
-
